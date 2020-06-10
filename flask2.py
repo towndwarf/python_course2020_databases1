@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello():
+def whatever():
     return """
         <html>
            <body>
@@ -17,7 +17,7 @@ def hello():
 
 
 @app.route('/time')
-def time():
+def whatever2():
     return f"""
         <html><body>
             The time is {str(datetime.now())}.

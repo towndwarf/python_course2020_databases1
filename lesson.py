@@ -1,5 +1,6 @@
-a = '1234567890'
+import flask
+
+a = 'what do#you like'
+
 # b = a[3:8]
-print("%s" % a[:-4])
-
-
+print(f"{a[:-6]}", ",|stam")

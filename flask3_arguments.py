@@ -20,5 +20,5 @@ def hello():
 # Launch the FlaskPy dev server
 app.run(host="localhost", debug=True)
 
-# ?q=python+flask&go=Submit
+# ?name=python+flask&other=Submit
 # http://localhost:5000/?name=Frank

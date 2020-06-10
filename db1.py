@@ -1,22 +1,22 @@
 import sqlite3
 
-conn = sqlite3.connect('dbsql.db')
+conn = sqlite3.connect('stamdb.db')
 cur = conn.cursor()
-# cur.execute('SELECT * from countries')
-# print("SINGLE ROW: ", cur.fetchone())
-# cur.execute('SELECT `country-code`,`country_name` from countries')
-# print("ALL ROWS: ",cur.fetchall())
+cur.execute('SELECT * from countries')
+print("SINGLE ROW: ", cur.fetchone())
 
-# for row in cur.execute('SELECT * FROM countries'):
-#    print(row)
+cur.execute('SELECT `country-code`,`name` from countries')
+print("ALL ROWS: ", cur.fetchall())
+
+for row in cur.execute('SELECT * FROM countries'):
+    print(row)
 
 code = 'ITA'
-cur.execute("SELECT * FROM countries WHERE code = '%s'" % code)
+cur.execute("SELECT * FROM countries WHERE `alpha-3` = '%s'" % code)
 print(cur.fetchone())
-
 
 code = ('ISR',)
-cur.execute('SELECT * FROM countries WHERE code = ?', code)
+cur.execute('SELECT * FROM countries WHERE `alpha-3` = ?', code)
 print(cur.fetchone())
 
-cur.close()
+conn.close()

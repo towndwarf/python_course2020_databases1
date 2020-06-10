@@ -20,7 +20,7 @@ def home():
 
 @app.route('/greet')
 def greet():
-    username = request.args.get('username', 'World')
+    username = request.args.get('username', 'Alex')
     favfood = request.args['favfood']
     if favfood == '':
         msg = 'You did not tell me your favorite food.'
